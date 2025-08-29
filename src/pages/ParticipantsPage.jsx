@@ -8,6 +8,7 @@ export default function ParticipantsPage({ participants }) {
       <div className="container">
         <h1 className="page-title">Daftar Peserta</h1>
 
+        {/* Grid Card Peserta */}
         <div className="card-grid">
           {participants.length > 0 ? (
             participants.map((p) => (
@@ -17,10 +18,13 @@ export default function ParticipantsPage({ participants }) {
               </div>
             ))
           ) : (
-            <p>Belum ada peserta terdaftar.</p>
+            <p style={{ textAlign: "center", gridColumn: "1/-1" }}>
+              Belum ada peserta terdaftar.
+            </p>
           )}
         </div>
 
+        {/* Tombol Daftar Peserta Baru */}
         <div className="btn-container">
           <Link to="/register">
             <button className="submit-btn">+ Daftar Peserta Baru</button>
